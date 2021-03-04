@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Env Vars</title>
+</head>
+<body bgcolor="#212121">
+    <div id="nav">
+        <img style="height: 70%;padding: 10px;filter: grayscale(1) contrast(100);" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg">
+    </div>
+    <center>
+    <form id="setvars" action="/envvars">
+    <input type="text" name="client_id" placeholder="CLIENT_ID"> <br>
+    <input type="text" name="client_secret" placeholder="CLIENT_SECRET"><br>
+    <input id='submit' type="submit" value="Submit">
+    </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Spotify Downloader | Home</title>
+</head>
+<body>
+    {% csrf_token %}
+    <div id="nav">
+        <img style="height: 70%;padding: 10px;filter: grayscale(1) contrast(100);" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg">
+    </div>
+    <center>
+    <form id="textarea" action="/track/">
+    <textarea name="urls" placeholder="Paste your songs/playlists URLs here."></textarea> <br>
+    <input id='submit' type="submit" value="Submit">
+    </form>
+    </center>
+    <script>
+        var height = screen.height - 151;
+        document.getElementsByTagName('textarea')[0].style.height = height + 'px';
+    </script>
+</body>
+</html>

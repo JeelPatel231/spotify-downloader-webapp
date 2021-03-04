@@ -1,0 +1,5 @@
+django
+spotipy
+youtube-search
+youtube_dl
+eyed3

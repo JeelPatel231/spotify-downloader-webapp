@@ -1,0 +1,75 @@
+*{margin: 0;padding: 0;}
+
+@font-face {
+    font-family: spotify-circular-bold;
+    src: url('https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2');
+}
+@font-face {
+    font-family: spotify-circular;
+    src: url('https://open.scdn.co/cdn/fonts/CircularSpUICyrOnly-Book.6a858994.woff2');
+}
+
+#nav{
+    height: 60px;
+    background:#000;
+}
+
+form#setvars{
+    background: #535353;
+    font-family: spotify-circular-bold;
+    color: white;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: justify;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    max-width: 700px;
+}
+
+form#textarea{
+    background: #535353;
+    font-family: spotify-circular-bold;
+    color: white;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: justify;
+    padding: 10px;
+}
+
+input#submit{
+    height: 40px;
+    font-size: 20px;
+    font-family: 'spotify-circular';
+    width: 90px;
+    border-radius: 13px;
+    color: #fff;
+    background: #00000000;
+    border: 2px white solid;
+}
+
+input[type=text]{
+    height: 30px;
+    vertical-align: text-bottom;
+    font-family: spotify-circular;
+    font-size: 15px;
+    background: #ffffff00;
+    width: 90%;
+    margin: 0 0 50px 0;
+    border: 0px;
+    border-bottom: 2px white solid;
+    max-width: 500px;
+    color: #fff;
+    padding: 0 0 0 5px;
+}
+
+textarea{
+    padding: 4px 0 0 0;
+    border-radius: 5px;
+    background: #ffffff00;
+    font-family: 'spotify-circular';
+    color: #fff;
+    width: 100%;
+    font-size: 17px;
+    border:1px white solid;
+}
