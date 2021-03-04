@@ -1,7 +1,7 @@
 # spotify-downloader-webapp
-Clone the repo
-install requirements using
-`pip install -r requirements.txt`
-run the server using
-`python manage.py runserver`
+Clone the repo <br>
+install requirements using <br>
+`pip install -r requirements.txt` <br>
+run the server using <br>
+`python manage.py runserver` <br>
 open the link console shows, thats your webapp running
