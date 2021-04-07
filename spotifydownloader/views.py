@@ -48,16 +48,6 @@ def downloadandmetadata(token, albumname, albumart, track_number, albumartist, s
     audiofile.tag.images.set(3, urllib.request.urlopen(albumart).read(), 'image/jpeg')
     audiofile.tag.save()
 
-def checktype(token, albumname, albumart, track_number, albumartist, songname, artist, ytdldownload):
-    print(type(token))
-    print(type(albumname))
-    print(type(albumart))
-    print(type(track_number))
-    print(type(albumartist))
-    print(type(songname))
-    print(type(artist))
-    print(type(ytdldownload))
-
 def track(request):
     if request.method == 'GET':
         urls=request.GET.get('urls')
