@@ -48,6 +48,16 @@ def downloadandmetadata(token, albumname, albumart, track_number, albumartist, s
     audiofile.tag.images.set(3, urllib.request.urlopen(albumart).read(), 'image/jpeg')
     audiofile.tag.save()
 
+def checktype(token, albumname, albumart, track_number, albumartist, songname, artist, ytdldownload):
+    print(type(token))
+    print(type(albumname))
+    print(type(albumart))
+    print(type(track_number))
+    print(type(albumartist))
+    print(type(songname))
+    print(type(artist))
+    print(type(ytdldownload))
+
 def track(request):
     if request.method == 'GET':
         urls=request.GET.get('urls')
@@ -71,6 +81,8 @@ def track(request):
                 ytdldownload=[]
                 ytdldownload.append(youtubeurl)
                 downloadandmetadata(token, albumname, albumart, track_number, albumartist, songname, artist, ytdldownload)
+                # checktype(token, albumname, albumart, track_number, albumartist, songname, artist, ytdldownload)
+
             elif 'playlist' in track_id:
                 print('used playlist function')
                 results = spotify.playlist(track_id)
@@ -92,8 +104,14 @@ def track(request):
                     downloadandmetadata(token, albumname, albumart, track_number, albumartist, songname, artist, ytdldownload)
     
         subprocess.run(['zip','-r','templates/YTDL/'+token+'/spotify_downloads.zip','templates/YTDL/'+token])
-        #serve below
+
+        #serve below, if you are running locally, you can comment all of this, 
+        # and uncomment the last line, since you dont need to download the file again,
+        # you will find your files in YTDL folder with a random foldername
         with open('templates/YTDL/'+token+'/spotify_downloads.zip', 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/zip")
             response['Content-Disposition'] = 'inline; filename=' + 'spotify_downloads.zip'
             return response
+        
+        #uncomment this line below if you have commented out the above lines
+        # return HttpResponse('<h1>Should see your files in YTDL Folder</h1>')
